@@ -38,6 +38,12 @@ form.addEventListener('submit', onFormSubmit);
 function onFormSubmit(evt) {
   evt.preventDefault();
 
+  // Перевірка, чи обидва поля не порожні
+  if (emailInput.value.trim() === '' || messageTextarea.value.trim() === '') {
+    alert('Please fill in all fields.');
+    return; // Зупиняємо відправку форми
+  }
+
   //показує що видаляємо
   console.log('Form data submitted:', {
     email: form.email.value,
